@@ -2,7 +2,7 @@ logo = """
 |
 Airport Optimization                |
 by David Naranjo                    |
-Uri Barabjas                      .-'-.
+Uri Barajas                      .-'-.
                                  ' ___ '
                        ---------'  .-.  '---------
        _________________________'  '-'  '_________________________
