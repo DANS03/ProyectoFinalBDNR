@@ -11,6 +11,8 @@ class FlightsRepo:
         self.dbMongo = dbMongo
         self.dbDgraph = dbDgraph
 
+    
+
     def getNumOfFlightsPerAirportMongo(self):
         query = [{"$group": {"_id": "$from", "totalFlights": {"$sum": 1}}}]
         result = self.dbMongo.passengers_data.aggregate(query)
@@ -158,7 +160,7 @@ class FlightsRepo:
             a_count=0
             am_count=0
             v_count=0
-            limit_amount =10
+            limit_amount =5
             for key, value in data.items() :    
                 print('--')
                 for item in value:
@@ -178,15 +180,15 @@ class FlightsRepo:
                                     am_count=am_count+1
                                 elif (currAirline == "Volaris"):
                                     v_count=v_count+1
-            if(aa_count < limit_amount):
+            if(aa_count > limit_amount):
                 print("American Airlines need a Lunch Room for : ",prefix)
-            if(da_count < limit_amount):
+            if(da_count > limit_amount):
                 print("Delta Airlines need a Lunch Room for : ",prefix)
-            if(a_count < limit_amount):
+            if(a_count > limit_amount):
                 print("Alaska need a Lunch Room for : ",prefix)
-            if(am_count < limit_amount):
+            if(am_count > limit_amount):
                 print("Aeromexico need a Lunch Room for : ",prefix) 
-            if(v_count < limit_amount):
+            if(v_count > limit_amount):
                 print("Volaris need a Lunch Room for : ",prefix)                
             #print(f"Airport: {prefix} :\n{json.dumps(count, indent=2)}")
     
@@ -214,7 +216,7 @@ class FlightsRepo:
         a_count=0
         am_count=0
         v_count=0
-            
+        limit_amount = 5
         for key, value in data.items() :    
             print('--')
             for item in value:
@@ -234,14 +236,14 @@ class FlightsRepo:
                                 am_count=am_count+1
                             elif (currAirline == "Volaris"):
                                 v_count=v_count+1
-        if(aa_count < 5):
-            print("American Airlines need a Lunch Room for : ",prefix)
-        if(da_count < 5):
-            print("Delta Airlines need a Lunch Room for : ",prefix)
-        if(a_count < 5):
-            print("Alaska need a Lunch Room for : ",prefix)
-        if(am_count < 5):
-            print("Aeromexico need a Lunch Room for : ",prefix) 
-        if(v_count < 5):
-            print("Volaris need a Lunch Room for : ",prefix)                
+            if(aa_count > limit_amount):
+                print("American Airlines need a Lunch Room for : ",prefix)
+            if(da_count > limit_amount):
+                print("Delta Airlines need a Lunch Room for : ",prefix)
+            if(a_count > limit_amount):
+                print("Alaska need a Lunch Room for : ",prefix)
+            if(am_count > limit_amount):
+                print("Aeromexico need a Lunch Room for : ",prefix) 
+            if(v_count > limit_amount):
+                print("Volaris need a Lunch Room for : ",prefix)                   
         

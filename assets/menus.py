@@ -1,20 +1,16 @@
 menu_options="""
 Choose what solution you want to see:
-    1 - Rental car service  (Cassandra)
-    2 - Restaurant services (Mongodb)
-    3 - Priority lunch      (Dgraph)
+      
+    1 - Restaurant services (Mongodb)
+    2 - Priority lunch      (Dgraph)
     
     Write 'Exit' to go quit
+    Rental car service  (Cassandra) / URI
 Option: """
 
 menu_options_cassandra ="""
 Choose what you want to see:
-    1 - Airports with number of flights
-    2 - Number of flights of a given airport
-    3 - Overview of airports an decisions for a new restaurant
-    4 - Check if an airport needs a new resturant
-
-Write 'load' to load data  
+    Cassandra is currently unavailble due to we have not been able to find a Free cloud option, this part Lives in app.py 
 Write 'back' to go back
 Option: """ 
 

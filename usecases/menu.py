@@ -15,11 +15,11 @@ class Menu:
         while(True):
             option= input(menu_options)
             
+            #if(option == '1'):
+            #    self.cassandra_menu()
             if(option == '1'):
-                self.cassandra_menu()
-            elif(option == '2'):
                 self.mongo_menu()
-            elif(option == '3'):
+            elif(option == '2'):
                 self.dgraph_menu()
                 
             elif(option == 'exit' ):
