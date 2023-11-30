@@ -41,12 +41,10 @@ class Dgraph:
 
         type airport {
             from
-            flight
         }
 
         type airline {
             airline
-            connected
         }
         
         airline : string @index(exact) .

@@ -136,14 +136,12 @@ class FlightsRepo:
         print(f"Airport: {prefix} :\n{json.dumps(count, indent=2)}")
     
     def getIdeaOfOpeningLuchRoomDgraph(self):
-        query = """
-        query flightPerAirport($name: string) {
-            flightsCount(func: eq(from, $name)) {
-                airline
-                from
-                connection
-                
-                }
+        query ="""
+        {
+          flightsCountByAirport(func: has(from)) {
+            airport: from
+            connectionCount: count(uid) @filter(eq(connection, true))
+          }
         }
         """
         airports = ["PDX", "GDL", "SJC", "LAX", "JFK"]
@@ -194,13 +192,11 @@ class FlightsRepo:
     
     def getIdeaOfOpeningLuchRoomDgraphWithPrefix(self,prefix):
         query = """
-        query flightPerAirport($name: string) {
-            flightsCount(func: eq(from, $name)) {
-                airline
-                from
-                connection
-                
-                }
+        {
+          flightsCountByAirport(func: has(from)) {
+            airport: from
+            connectionCount: count(uid) @filter(eq(connection, true))
+          }
         }
         """
        
